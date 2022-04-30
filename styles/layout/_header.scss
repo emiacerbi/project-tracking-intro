@@ -1,0 +1,61 @@
+@use '/styles/base/variables' as *;
+@use '/styles/base/mixins' as *;
+
+.header {
+
+  &__nav__mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1rem;
+
+    &__ham {
+      cursor: pointer;
+    }
+  }
+
+  &__nav {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1rem;
+    color: $neutral-db;
+    font-size: $fs-lg;
+    font-weight: 700;
+
+    &__links {
+
+      gap: 3rem;
+      align-items: center;
+
+      &__link {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      span {
+        margin-bottom: .25rem;
+        color: $neutral-dgb;
+        font-size: $fs-2xl;
+      }
+  
+      .disabled {
+        color: $neutral-dgb;
+      }
+    }
+  }
+
+  @include mq('tablet') {
+    &__nav__mobile {
+      display: none;
+    }
+
+    &__nav {
+      display: flex;
+    }
+  }
+
+}
