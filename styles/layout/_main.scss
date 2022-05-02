@@ -2,33 +2,39 @@
 @use '/styles/base/mixins' as *;
 
 .main {
-  height: 85vh;
-
+  min-height: 85vh;
   overflow: hidden;
+
+  @include mq('desktop') {
+    overflow: hidden;
+  }
   
   .container {
     position: relative;
-    min-height: 75vh;
+    min-height: 85vh;
     padding-inline: .5rem;
 
-    @include mq('tablet-wide') {
+    @include mq('desktop') {
       display: flex;
+      max-width: 70rem;
     }
   }
 
   &__img {
     order: 0;
-    max-width: 500px;
+    max-width: 600px;
+    object-fit: contain;
     margin: 0 auto;
     margin-top: 2rem;
 
-    @include mq('tablet-wide') {
+    @include mq('desktop') {
 
       position: absolute;
       top: 50%;
       left: 45%;
       max-width: 900px;
       margin: 0;
+      margin-left: 1.5rem;
       transform: translateY(-50%);
     }
 
@@ -46,9 +52,10 @@
     padding-bottom: 2rem;
     padding-inline: 1.5rem;
 
-    @include mq('tablet-wide') {
+    @include mq('desktop') {
       align-self: center;
       margin: 0;
+      margin-top: 2rem;
     }
 
     &__new {
@@ -73,7 +80,7 @@
       font-size: $fs-4xl;
       line-height: 1;
 
-      @include mq('tablet-wide') {
+      @include mq('desktop') {
         margin: 1.5rem 0;
         font-size: $fs-6xl;
       }
@@ -86,7 +93,7 @@
       font-size: $fs-lg;
 
       
-      @include mq('tablet-wide') {
+      @include mq('desktop') {
         margin-bottom: 2.5rem;
       }
 
@@ -110,7 +117,7 @@
         opacity: .7;
       }
 
-      @include mq('tablet-wide') {
+      @include mq('desktop') {
         width: 185px;
 
         padding: 1rem 1.25rem;
@@ -122,7 +129,7 @@
       color: $neutral-gb;
       letter-spacing: 1px;
 
-      @include mq('tablet-wide') {
+      @include mq('desktop') {
         letter-spacing: 3px;
       }
     }

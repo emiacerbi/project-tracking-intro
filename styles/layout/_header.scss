@@ -3,6 +3,12 @@
 
 .header {
 
+  .container {
+    @include mq('desktop') {
+      max-width: 70rem;
+    }
+  }
+
   &__nav__mobile {
     display: flex;
     align-items: center;

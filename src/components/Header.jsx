@@ -30,7 +30,7 @@ export const Header = () => {
 
             {/* Wide Res */}
             <nav className='header__nav font-heading'>
-               <img src={mobileMenuIcon} alt='logo' />
+               <img src={logo} alt='logo' />
                <div className='header__nav__links flex uppercase'>
                   <a className='header__nav__links__link'>product</a>
                   <a className='header__nav__links__link'>features</a>

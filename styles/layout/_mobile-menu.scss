@@ -3,20 +3,22 @@
 
 .mobile-menu {
   position: absolute;
-  z-index: 10;
+  z-index: 20;
+  top: -500px;
   left: 50%;
   flex-direction: column;
   width: 315px;
   padding: 1rem;
   transform: translateX(-50%);
+  transition: .3s ease;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: $neutral-db;
   font-size: $fs-lg;
   font-weight: 700;
-  gap: .5rem;
   text-align: center;
   cursor: pointer;
+  gap: .5rem;
 
   &__link {
     &:hover {
@@ -32,5 +34,13 @@
     background-color: lightgray;
   }
 
+  @include mq('tablet') {
+    display: none;
+  }
 
+  
+}
+
+.position {
+  top: 10%;
 }
