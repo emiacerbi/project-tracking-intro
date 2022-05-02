@@ -2,12 +2,13 @@
 @use '/styles/base/mixins' as *;
 
 .main {
+  height: 85vh;
 
   overflow: hidden;
   
   .container {
     position: relative;
-    min-height: 80vh;
+    min-height: 75vh;
     padding-inline: .5rem;
 
     @include mq('tablet-wide') {
@@ -24,9 +25,11 @@
     @include mq('tablet-wide') {
 
       position: absolute;
-      top: 50px;
+      top: 50%;
       left: 45%;
       max-width: 900px;
+      margin: 0;
+      transform: translateY(-50%);
     }
 
   }
@@ -69,6 +72,11 @@
       color: $neutral-db;
       font-size: $fs-4xl;
       line-height: 1;
+
+      @include mq('tablet-wide') {
+        margin: 1.5rem 0;
+        font-size: $fs-6xl;
+      }
     }
 
     &__content {
@@ -76,6 +84,12 @@
       margin-bottom: 1.5rem;
       color: gray;
       font-size: $fs-lg;
+
+      
+      @include mq('tablet-wide') {
+        margin-bottom: 2.5rem;
+      }
+
     }
 
     &__button {
@@ -95,12 +109,22 @@
       &:hover {
         opacity: .7;
       }
+
+      @include mq('tablet-wide') {
+        width: 185px;
+
+        padding: 1rem 1.25rem;
+        font-size: .875rem;
+      }
     }
 
     .button__span {
       color: $neutral-gb;
       letter-spacing: 1px;
-      
+
+      @include mq('tablet-wide') {
+        letter-spacing: 3px;
+      }
     }
   }
 }
