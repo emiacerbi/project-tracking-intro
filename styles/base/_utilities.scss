@@ -10,8 +10,11 @@
   gap: ($gap, 1rem);
 }
 
+.ai-center { align-items: center }
+.jc-center { justify-content: center }
+
 .container {
-  max-width: 60rem;
+  max-width: 70rem;
   margin-inline: auto;
   padding-inline: 2rem;
 }

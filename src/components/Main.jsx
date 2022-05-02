@@ -6,9 +6,7 @@ export const Main = () => {
     <main className='main'>
       <div className='container'>
         <img src={img} alt='smartphone and laptop' className='main__img' />
-      </div>
 
-      <div className='container'>
         <section className='main__section '>
           <p className='main__section__new uppercase font-heading'>
             <span className='main__section__span'>new</span>
@@ -22,10 +20,12 @@ export const Main = () => {
             Project planning and time tracking for agile teams
           </p>
 
-          <button className='main__section__button uppercase font-body'>
-            schedule a demo
-          </button>
-          <span className='uppercase font-heading button__span'>to see a preview</span>
+          <div className='flex ai-center'>
+            <button className='main__section__button uppercase font-body'>
+              schedule a demo
+            </button>
+            <span className='uppercase font-heading button__span'>to see a preview</span>
+          </div>
 
         </section>
       </div>

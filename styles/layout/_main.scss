@@ -1,23 +1,52 @@
 @use '/styles/base/variables' as *;
+@use '/styles/base/mixins' as *;
 
 .main {
 
+  overflow: hidden;
+  
   .container {
-    // position: relative;
-    // height: 300px;
-    padding: 0;
+    position: relative;
+    min-height: 80vh;
+    padding-inline: .5rem;
+
+    @include mq('tablet-wide') {
+      display: flex;
+    }
   }
 
   &__img {
-    // position: absolute;
-    // top: 50px;
-    // left: 95px;
+    order: 0;
     max-width: 500px;
-    // transform: scale(1.5);
+    margin: 0 auto;
+    margin-top: 2rem;
+
+    @include mq('tablet-wide') {
+
+      position: absolute;
+      top: 50px;
+      left: 45%;
+      max-width: 900px;
+    }
+
   }
 
   &__section {
-    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+
+    order: -1;
+    max-width: 500px;
+    margin: 2rem auto 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-inline: 1.5rem;
+
+    @include mq('tablet-wide') {
+      align-self: center;
+      margin: 0;
+    }
 
     &__new {
       color: $neutral-gb;
@@ -35,22 +64,25 @@
     }
 
     &__title {
-      margin: 1rem auto;
+      max-width: 20ch;
+      margin: 1rem 0;
       color: $neutral-db;
       font-size: $fs-4xl;
       line-height: 1;
     }
 
     &__content {
+      max-width: 28ch;
+      margin-bottom: 1.5rem;
       color: gray;
       font-size: $fs-lg;
     }
 
     &__button {
       width: 150px;
-      margin-top: 1rem;
       margin-right: 1rem;
       padding: .75rem 1rem;
+      transition: .2s ease;
       border: none;
       border-radius: .25rem;
       background-color: $primary-red;
@@ -58,6 +90,11 @@
       font-size: .75rem;
       font-weight: 600;
       letter-spacing: 1px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: .7;
+      }
     }
 
     .button__span {
